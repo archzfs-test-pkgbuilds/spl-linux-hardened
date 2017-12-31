@@ -18,9 +18,9 @@
 pkgbase="spl-linux-hardened"
 pkgname=("spl-linux-hardened" "spl-linux-hardened-headers")
 
-pkgver=0.7.5_4.14.9.a.1
+pkgver=0.7.5_4.14.10.a.1
 pkgrel=1
-makedepends=("linux-hardened-headers=4.14.9.a-1" "git")
+makedepends=("linux-hardened-headers=4.14.10.a-1" "git")
 arch=("x86_64")
 url="http://zfsonlinux.org/"
 source=("https://github.com/zfsonlinux/zfs/releases/download/zfs-0.7.5/spl-0.7.5.tar.gz"
@@ -28,7 +28,7 @@ source=("https://github.com/zfsonlinux/zfs/releases/download/zfs-0.7.5/spl-0.7.5
 sha256sums=("c4845d9a6123397c53ee003ed1712f2996a50ac2a9a30d1490280771484d08a6"
             "3c882c05ef76200e60713541ecfcac8b17fd043e85c35ebb453e9a47bfb13278")
 license=("GPL")
-depends=("spl-utils-common=0.7.5" "kmod" "linux-hardened=4.14.9.a-1")
+depends=("spl-utils-common=0.7.5" "kmod" "linux-hardened=4.14.10.a-1")
 prepare() {
     cd "${srcdir}/spl-0.7.5"
     patch -Np1 -i ${srcdir}/0001-Linux-4.15-compat-timer-updates.patch
@@ -38,8 +38,8 @@ build() {
     cd "${srcdir}/spl-0.7.5"
     ./autogen.sh
     ./configure --prefix=/usr --libdir=/usr/lib --sbindir=/usr/bin \
-                --with-linux=/usr/lib/modules/4.14.9-1-hardened/build \
-                --with-linux-obj=/usr/lib/modules/4.14.9-1-hardened/build \
+                --with-linux=/usr/lib/modules/4.14.10-1-hardened/build \
+                --with-linux-obj=/usr/lib/modules/4.14.10-1-hardened/build \
                 --with-config=kernel
     make
 }
@@ -64,5 +64,5 @@ package_spl-linux-hardened-headers() {
     make DESTDIR="${pkgdir}" install
     rm -r "${pkgdir}/lib"
     # Remove reference to ${srcdir}
-    sed -i "s+${srcdir}++" ${pkgdir}/usr/src/spl-*/4.14.9-1-hardened/Module.symvers
+    sed -i "s+${srcdir}++" ${pkgdir}/usr/src/spl-*/4.14.10-1-hardened/Module.symvers
 }
