@@ -11,5 +11,5 @@ post_upgrade() {
 }
 
 run_depmod() {
-    depmod -a 4.15.16-1-hardened
+    depmod -a 4.15.17-1-hardened
 }
