@@ -18,15 +18,15 @@
 pkgbase="spl-linux-hardened"
 pkgname=("spl-linux-hardened" "spl-linux-hardened-headers")
 
-pkgver=0.7.8_4.16.7.a.1
+pkgver=0.7.8_4.16.7.b.1
 pkgrel=1
-makedepends=("linux-hardened-headers=4.16.7.a-1" "git")
+makedepends=("linux-hardened-headers=4.16.7.b-1" "git")
 arch=("x86_64")
 url="http://zfsonlinux.org/"
 source=("https://github.com/zfsonlinux/zfs/releases/download/zfs-0.7.8/spl-0.7.8.tar.gz")
 sha256sums=("f6c9fe37d149da7fec34ee3bf32302a16b4cfcd84b8c6aa3d764ceb816587636")
 license=("GPL")
-depends=("spl-utils-common=0.7.8" "kmod" "linux-hardened=4.16.7.a-1")
+depends=("spl-utils-common=0.7.8" "kmod" "linux-hardened=4.16.7.b-1")
 
 build() {
     cd "${srcdir}/spl-0.7.8"
