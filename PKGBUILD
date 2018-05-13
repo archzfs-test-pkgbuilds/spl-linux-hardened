@@ -20,7 +20,7 @@ pkgname=("spl-linux-hardened" "spl-linux-hardened-headers")
 
 pkgver=0.7.9_4.16.8.a.1
 pkgrel=1
-makedepends=("linux-hardened-headers=4.16.8.a-1" "git")
+makedepends=("linux-hardened-headers=4.16.8.a-1")
 arch=("x86_64")
 url="http://zfsonlinux.org/"
 source=("https://github.com/zfsonlinux/zfs/releases/download/zfs-0.7.9/spl-0.7.9.tar.gz")
